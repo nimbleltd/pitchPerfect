@@ -17,23 +17,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjJ-d4-cnf">
-                                <rect key="frame" x="276" y="285" width="49" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Record"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjJ-d4-cnf">
+                                <rect key="frame" x="251" y="250" width="100" height="100"/>
+                                <state key="normal" image="recordButton"/>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="E6y-8v-EOg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Record" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvG-Ti-aLX">
-                                <rect key="frame" x="247" y="361" width="107" height="21"/>
+                                <rect key="frame" x="247" y="396" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlR-er-unf">
-                                <rect key="frame" x="247" y="431" width="106" height="30"/>
-                                <state key="normal" title="Stop Recording"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WlR-er-unf">
+                                <rect key="frame" x="274" y="458" width="53" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="WIt-Ry-HyK"/>
+                                </constraints>
+                                <state key="normal" title="Stop Recording" image="stopRecordButton"/>
                                 <connections>
                                     <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xxj-HC-DWz"/>
                                 </connections>
@@ -41,17 +43,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="WlR-er-unf" firstAttribute="top" secondItem="MvG-Ti-aLX" secondAttribute="bottom" constant="49" id="B0W-KK-i7k"/>
                             <constraint firstItem="MvG-Ti-aLX" firstAttribute="top" secondItem="IjJ-d4-cnf" secondAttribute="bottom" constant="46" id="IRT-UN-Ino"/>
                             <constraint firstItem="IjJ-d4-cnf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PPD-CU-eHr"/>
-                            <constraint firstItem="WlR-er-unf" firstAttribute="centerX" secondItem="MvG-Ti-aLX" secondAttribute="centerX" id="TIV-Ah-TTm"/>
+                            <constraint firstItem="WlR-er-unf" firstAttribute="top" secondItem="MvG-Ti-aLX" secondAttribute="bottom" constant="41" id="QrJ-6y-mAa"/>
+                            <constraint firstItem="WlR-er-unf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TE7-5l-rfS"/>
+                            <constraint firstItem="MvG-Ti-aLX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zhf-vi-3Wv"/>
                             <constraint firstItem="MvG-Ti-aLX" firstAttribute="centerX" secondItem="IjJ-d4-cnf" secondAttribute="centerX" id="gDz-t1-kBO"/>
+                            <constraint firstItem="MvG-Ti-aLX" firstAttribute="centerX" secondItem="IjJ-d4-cnf" secondAttribute="centerX" id="hNG-D3-X84"/>
                             <constraint firstItem="IjJ-d4-cnf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="k97-39-cWA"/>
                             <constraint firstItem="MvG-Ti-aLX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w8d-wn-f2F"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="k97-39-cWA"/>
+                                <exclude reference="gDz-t1-kBO"/>
+                                <exclude reference="w8d-wn-f2F"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="recordButton" destination="IjJ-d4-cnf" id="Sai-mT-K3K"/>
                         <outlet property="recordingLabel" destination="MvG-Ti-aLX" id="FVu-4i-QXl"/>
+                        <outlet property="stopRecordingButton" destination="WlR-er-unf" id="pAY-JO-BJX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -59,4 +72,8 @@
             <point key="canvasLocation" x="305" y="357"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="recordButton" width="100" height="100"/>
+        <image name="stopRecordButton" width="50" height="50"/>
+    </resources>
 </document>
