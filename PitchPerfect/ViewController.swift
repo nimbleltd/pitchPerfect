@@ -31,6 +31,9 @@ class ViewController: UIViewController {
     @IBAction func stopRecording(sender: AnyObject) {
     }
     
+    override func viewWillAppear(animated: Bool) {
+        print("viewWillAppear Called")
+    }
 
 }
 
