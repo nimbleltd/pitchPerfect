@@ -33,6 +33,15 @@ class RecordSoundsViewController: UIViewController {
         recordingLabel.text = "Recording In Progress..."
         stopRecordingButton.enabled = true
         recordButton.enabled = false
+        
+        let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,.UserDomainMask, true)[0] as String
+        let recordingName = "recordedVoice.wav"
+        let pathArray = [dirPath, recordingName]
+        let filePath = NSURL.fileURLWithPathComponents(pathArray)
+        print(filePath)
+        
+        
+        
     }
 
 
