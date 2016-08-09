@@ -71,8 +71,9 @@ class RecordSoundsViewController: UIViewController , AVAudioRecorderDelegate {
         if (flag){
             self.performSegueWithIdentifier("stopRecording", sender: audioRecorder.url)
         }else {
-                print ("sacing of recorded file failed")
+                print ("saving of recorded file failed")
         }
+    }
 
 }
 
