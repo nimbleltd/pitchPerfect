@@ -148,6 +148,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="AmO-cM-DKy" secondAttribute="trailing" id="zHb-p7-zgp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="chipmunkButton" destination="1xo-Ix-8hD" id="jo6-mS-3Aw"/>
+                        <outlet property="echoButton" destination="KM1-av-fV7" id="lNC-ia-a9H"/>
+                        <outlet property="rabbit" destination="07H-b4-nBS" id="L6B-RB-ncr"/>
+                        <outlet property="rabbitButton" destination="07H-b4-nBS" id="HXs-Oz-PsR"/>
+                        <outlet property="reverbButton" destination="Yjr-BH-2oe" id="KxE-gf-sIG"/>
+                        <outlet property="snailButton" destination="1MJ-L2-MdS" id="S4A-F1-P8U"/>
+                        <outlet property="stopButton" destination="362-11-8yq" id="xGB-NE-ajZ"/>
+                        <outlet property="vaderButton" destination="AvB-zy-VLV" id="Xay-2N-4hC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A5s-Hk-2h8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
